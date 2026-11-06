@@ -1,0 +1,45 @@
+/*
+ * Objetivo: Creamos un programa que pida 10 números reales, los almacene en un array
+ * y muestre el máximo y mínimo
+ * Fecha: 04/11/2026
+ * Autor: Diego Martínez
+ */
+package ejercicio3;
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		//Declaramos e inicializamos el array.
+		final int CANTIDAD= 10;
+		
+		double [] num = new double[CANTIDAD];
+		
+		System.out.println("Introduce un número");
+		num[0]= teclado.nextDouble();
+		//Le asignamos valores a mayor y menor para luego poder hacer la comparación
+		double mayor=num[0];
+		double menor=num[0];
+		//recorremos el array y comprobamos que número es mayor o menor
+		for (int i=1; i<num.length; i++) {
+			System.out.println("Introduce un número");
+			num[i]= teclado.nextDouble();
+
+			if (mayor<num[i]) {
+				mayor = num[i];
+			} else if (menor>num[i]) {
+				menor = num[i];
+			}
+	
+		}
+		//mostramos los datos por pantalla
+		System.out.println(mayor);
+		System.out.println(menor);
+		teclado.close();
+
+	}
+
+}

@@ -1,0 +1,33 @@
+/*
+ * Objetivo: Pedi dos valores enteros P y Q y luego crear un array que contenga los valores de P hasta Q y mostrarlo
+ * Autor: Diego Martínez
+ * Fecha: 05/11/2026
+ */
+package ejercicio7;
+
+import java.util.Scanner;
+
+public class Ejercicio7 {
+
+	public static void main(String[] args) {
+		Scanner teclado= new Scanner(System.in);
+		
+		final int CANTIDAD;
+		
+		int Q;
+		int P;
+		
+		System.out.println("Introduce un valor:");
+		P=teclado.nextInt();
+		System.out.println("Introduce otro valor");
+		Q=teclado.nextInt();
+		
+		if (P>Q) {
+			CANTIDAD= P-Q;
+		} else if (Q>P) {
+			CANTIDAD= Q-P;
+		}
+
+	}
+
+}

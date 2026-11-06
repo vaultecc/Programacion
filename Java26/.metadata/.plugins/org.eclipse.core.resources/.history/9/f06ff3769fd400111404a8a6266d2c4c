@@ -1,0 +1,29 @@
+package ejercicio3;
+
+import java.util.Scanner;
+
+public class Ejercicio3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		
+		double [] num = new double[10];
+		double numMayor;
+		double numMayorAhora= 0;
+		
+		for (int i=0; i>num.length; i++) {
+			System.out.println("Introduce un número");
+			num[i]=teclado.nextDouble();
+			numMayor= num[i];
+			for ( i=1; i<num.length; i++) {
+				if (numMayor>num[i]) {
+					numMayorAhora=numMayor;
+				}
+			}
+		}
+		System.out.println(numMayorAhora);
+
+	}
+
+}

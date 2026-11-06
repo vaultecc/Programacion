@@ -1,0 +1,69 @@
+/*
+ * Objetivo: Operaciones con cadenas
+ * Fecha: 4/11/2026
+ * Autor: Diego Martínez
+ */
+package cadenas;
+
+import java.util.Scanner;
+
+public class OpenCadenas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner teclado= new Scanner(System.in);
+		
+		String cadena;
+/*
+		do {
+
+			System.out.println("Introduce una cadena: ");
+			cadena=teclado.nextLine();
+
+			//Mostramos las posiciones pares
+
+			for (int i=0; i<cadena.length(); i= i+2) {
+				System.out.print(cadena.charAt(i)+ " ");
+			}
+			
+			//cadena= cadena.toLowerCase();
+
+		} while (!cadena.equalsIgnoreCase("fin"));
+*/
+
+/*
+	//Obtener una subcadena
+		System.out.println("Dame una cadena:");
+		cadena= teclado.nextLine();
+		System.out.println("Dime posicion inicial");
+		int posInicial= teclado.nextInt();
+		System.out.println("Dime posicion final");
+		int posFinal = teclado.nextInt();
+		String subCadena= cadena.substring(posInicial, posFinal);
+		System.out.println("La subcadena es: " + subCadena);
+*/
+		
+		System.out.println("Introduce tu primer nombre: ");
+		String nombre=teclado.next();
+		System.out.println("Introduce tu primer apellido: ");
+		String apellido1= teclado.next();
+		System.out.println("Introduce tu segundo apellido");
+		String apellido2= teclado.next();
+		System.out.println("Introduce tu dni(solo números)");
+		String dni=teclado.next();
+		
+		char letrasNombre= nombre.charAt(0);
+		String apellido1Letras = apellido1.substring(0,3);
+		String apellido2Letras= apellido2.substring(0,3);
+		String dniIDEA= dni.substring(5,8);
+		System.out.println("Usuario de IDEA: " + letrasNombre + apellido1Letras + apellido2Letras+dniIDEA);
+		
+	
+		
+		
+
+
+
+	}
+
+}

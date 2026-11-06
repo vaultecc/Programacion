@@ -1,0 +1,33 @@
+/*
+ * Objetivo: Pedimos dos valores enteros(NY M) creamos un array N y escribimos M en sus posiciones y mostramos por pantalla
+ * Autor: Diego Martínez
+ * Fecha: 05/11/2026
+ */
+package ejercicio6;
+
+import java.util.Scanner;
+
+public class Ejercicio6 {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		
+		//Declaramos las variables y almacenamos lo escrito por teclado en ellas
+		final int n;
+		int m;
+	
+		System.out.println("Introduce un número entero:");
+		n=teclado.nextInt();
+		System.out.println("Introduce otro entero:");
+		m=teclado.nextInt();
+
+		int [] unArray = new int [n];
+		//Recorremos el array y añadimos el valor de m a cada posición
+		for (int i= 0; i<unArray.length; i++) {
+			unArray[i]= m;
+			System.out.println("El valor del array es: " + unArray[i]);
+		}
+		teclado.close();
+	}
+
+}

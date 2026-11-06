@@ -1,0 +1,26 @@
+package expresionresregulares;
+
+import java.util.Scanner;
+
+public class ExpresionesRegulares {
+
+	public static void main(String[] args) {
+		Scanner teclado = new Scanner(System.in);
+		
+		String matricula;
+		boolean matriculaOK= false;
+		
+		System.out.println("Introduce tu mátricula");
+		matricula= teclado.next();
+		
+		do {
+			if (matricula.matches("[0-9]{4}[A-Z]{3}")) {
+				matriculaOK= true;
+			} else if (!matricula.matches("[0-9]{4}[A-Z]{3}")) {
+				matriculaOK= false;
+			}
+		} while (matriculaOK=false);
+
+	}
+
+}

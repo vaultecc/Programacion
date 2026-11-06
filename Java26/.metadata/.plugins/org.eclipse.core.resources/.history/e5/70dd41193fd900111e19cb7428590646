@@ -1,0 +1,15 @@
+/*
+ * Objetivo: Programa que pida 20 números enteros los almacene en un array y muestre la suma de los valores positivos y negativos
+ * Autor: Diego Martínez
+ * Fecha: 05/11/2026
+ */
+package ejercicio4;
+
+public class Ejercicio4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
