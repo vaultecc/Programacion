@@ -43,6 +43,7 @@ public class Ejercicio12 {
 		}
 	} while (!opcion.equalsIgnoreCase("c"));
 		
+	teclado.close();
 	}
 		
 }
