@@ -31,10 +31,18 @@ public class Ejercicio5 {
 				if (miMatriz[i][j]==1) numMujer++;
 			}
 		}
+		/*
+		for (int i=0; i<N; i=N) {
+			for(int j=0; j<N; j++) {
+				System.out.println("Introduce su sueldo: ");
+				miMatriz[i][j]= teclado.nextInt();
+			}
+		}
+		*/
 		
 
 		
-
+		
 	}
 
 }
