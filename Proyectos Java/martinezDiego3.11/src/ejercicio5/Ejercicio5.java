@@ -17,32 +17,34 @@ public class Ejercicio5 {
 		final int N;
 		int numVaron=0;
 		int numMujer=0;
+		int sueldoM=0;
+		int sueldoV=0;
+		int mediaM, mediaV;
 		
 		System.out.println("Introduzca el numero de empledados");
 		N= teclado.nextInt();
 		
-		int [][] miMatriz= new int [N][N];
+		int [][] empleados= new int [N][1];
 		
-		for (int i=0; i<N; i++) {
-			for(int j=0; j<N; j++) {
-				System.out.println("Introduce tu género (0 varon y 1 mujer): ");
-				miMatriz[i][j]=teclado.nextInt();
-				if (miMatriz[i][j]==0) numVaron++;
-				if (miMatriz[i][j]==1) numMujer++;
+		for (int i=0; i<empleados.length; i=N) {
+			System.out.println("Introduce tu género (0 varón 1 mujer) : ");
+			empleados[i][0]=teclado.nextInt();
+			System.out.println("Introduce tu sueldo: ");
+			empleados[i][1]=teclado.nextInt();
 			}
-		}
-		/*
-		for (int i=0; i<N; i=N) {
-			for(int j=0; j<N; j++) {
-				System.out.println("Introduce su sueldo: ");
-				miMatriz[i][j]= teclado.nextInt();
+		
+		for (int i=0; i<empleados.length; i=N) {
+			if (empleados[i][0] == 0) {
+				numVaron++;
+				sueldoV= sueldoV + empleados[i][1];
 			}
-		}
-		*/
+			if (empleados[i][0] == 1) {
+				numMujer++;
+				sueldoM= sueldoM + empleados[i][1];
+			}
+			}
+		
 		
 
-		
-		
 	}
-
 }
