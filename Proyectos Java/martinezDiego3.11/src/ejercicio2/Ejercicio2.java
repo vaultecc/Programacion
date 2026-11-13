@@ -11,23 +11,20 @@ public class Ejercicio2 {
 		// TODO Auto-generated method stub
 		//Declaramos las variables
 		final int CANTIDAD= 10;
-		int N=1;
-		int M=1;
 		//Creamos nuestra matriz con un tamaño 10x10
 		int [][] miMatriz = new int [CANTIDAD][CANTIDAD];
-		//Llenamos la matriz con los valores multiplicados de 1 * N, cuando N valga más de 10 vuelve a valer 1
+		//Llenamos la matriz con los valores multiplicados 
 		for (int i=0; i<CANTIDAD; i++) {
+			
 			for (int j=0; j<CANTIDAD; j++) {
-				miMatriz[i][j]= 1 * N;
-				N++;
-				if (N>10) N=1;
+				miMatriz[i][j]= (i + 1) * (j + 1);
 			}
 		}
 		
 		//Mostramos la información por pantalla
 		for (int i=0; i<CANTIDAD; i++) {
 			for (int j=0; j<CANTIDAD; j++) {
-				System.out.print(miMatriz[i][j]);
+				System.out.print(miMatriz[i][j] + " ");
 			}
 			System.out.println();
 		}
