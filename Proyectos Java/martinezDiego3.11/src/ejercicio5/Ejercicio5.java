@@ -15,31 +15,48 @@ public class Ejercicio5 {
 		Scanner teclado= new Scanner(System.in);
 		
 		final int N;
-		int numVaron=0;
-		int numMujer=0;
-		
+		int contadorH =0;  int contadorM = 0;
+		int sueldoTotalH = 0; int sueldoTotalM = 0;
+		double sueldoMedioH = 0; double sueldoMedioM = 0;
+
 		System.out.println("Introduzca el numero de empledados");
 		N= teclado.nextInt();
 		
-		int [][] miMatriz= new int [N][N];
+		int [][] miMatriz= new int [N][2];
 		
-		for (int i=0; i<N; i++) {
-			for(int j=0; j<N; j++) {
-				System.out.println("Introduce tu género (0 varon y 1 mujer): ");
-				miMatriz[i][j]=teclado.nextInt();
-				if (miMatriz[i][j]==0) numVaron++;
-				if (miMatriz[i][j]==1) numMujer++;
+		//Recorremos la matriz y introducimos los datos por teclado
+		for (int i=0; i<miMatriz.length; i++) {
+			System.out.println("Introduce tu género (0 hombre y 1 mujer) : ");
+			miMatriz[i][0]=teclado.nextInt();
+			System.out.println("Introduce tu sueldo:");
+			miMatriz[i][1]=teclado.nextInt();
+		}
+		
+		//Calculamos el sueldo total y la cantidad de Hombres/mujeres
+		for (int i=0; i<miMatriz.length; i++) {
+			if (miMatriz[i][0] == 0) {
+				contadorH++;
+				sueldoTotalH = miMatriz[i][1] +  sueldoTotalH;
+			}
+			if (miMatriz[i][0] == 1) {
+				contadorM++;
+				sueldoTotalM = miMatriz[i][1] +  sueldoTotalM;
 			}
 		}
-		/*
-		for (int i=0; i<N; i=N) {
-			for(int j=0; j<N; j++) {
-				System.out.println("Introduce su sueldo: ");
-				miMatriz[i][j]= teclado.nextInt();
-			}
+		
+		//Calculamos la media en el caso de que en la empresa haya hombres o mujeres
+		if (contadorH > 0) {
+			sueldoMedioH= (double)sueldoTotalH / contadorH;
+			System.out.println("El sueldo medio de los hombres es: " + sueldoMedioH + "€");
 		}
-		*/
+		if (contadorM > 0) {
+			sueldoMedioM = (double)sueldoTotalM / contadorM;
+			System.out.println("El sueldo medio de las mujeres es: " + sueldoMedioM + "€");
+		}
+
+		
+		teclado.close();
 		
 	}
-
+	
 }
