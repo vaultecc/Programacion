@@ -3,7 +3,7 @@
  * Fecha: 16/11/2026
  * Autor: Diego Martínez
  */
-package Ejercicio1;
+package ejercicio1;
 
 import java.util.Scanner;
 
