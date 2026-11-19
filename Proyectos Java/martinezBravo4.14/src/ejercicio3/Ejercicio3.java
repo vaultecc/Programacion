@@ -1,5 +1,5 @@
 /*
- * Objetivo: Pedir dos números enteros por teclados y mostrar cual es el mínimo mediante un método
+ * Objetivo: Pedir dos números enteros por teclados y mostrar cual es el mínimo mediante una función
  * Autor: Diego Martínez
  * Fecha: 18/11/2026
  */
@@ -8,9 +8,8 @@ package ejercicio3;
 import java.util.Scanner;
 
 public class Ejercicio3 {
-	//El método para comparar el número menor
+	//La función para comparar el número menor
 	public static int minimo(int a, int b) {
-		int menor;
 		if (a>b) {
 			return b;
 		} else return a;

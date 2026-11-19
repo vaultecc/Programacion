@@ -1,5 +1,5 @@
 /*
- * Objetivo: Un programa con un método que realize una multiplicación, luego lo mostramos por pantalla
+ * Objetivo: Un programa con una función que realize una multiplicación, luego lo mostramos por pantalla
  * Autor: Diego Martínez
  * Fecha: 18/11/2026
  */
@@ -8,7 +8,7 @@ package ejercicio1;
 import java.util.Scanner;
 
 public class Ejercicio1 {
-	//Declaramos el método que realiza la multiplicación
+	//Declaramos la función que realiza la multiplicación
 	public static double multiplica (double a, double b) {
 		return a * b;
 	}
