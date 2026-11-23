@@ -6,6 +6,8 @@
 package matrices;
 
 public class Notas {
+	
+	
 
 	public static void main(String[] args) {
 		final int NUM_ALUMNOS = 10;
@@ -45,8 +47,8 @@ public class Notas {
 		//Calculamos la media de cada materia
 		double mediaMateria;
 		int sumaMateria=0;
-		for (int alumno=0; alumno<NUM_ALUMNOS; alumno++) {
-			for (int materia=0; materia<NUM_MATERIAS; materia++) {
+		for (int materia=0; materia<NUM_MATERIAS; materia++) {
+			for (int alumno=0; alumno<NUM_ALUMNOS; alumno++) {
 				sumaMateria = 0 ;
 				sumaMateria = suma + notas[alumno][materia];
 			}
