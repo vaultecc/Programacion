@@ -8,29 +8,29 @@ package ejercicio14;
 import java.util.Scanner;
 
 public class Ejercicio14 {
-	
+	//Declaro el método
 	public static void triangulo (char x, int y) {
-		String espacio = " ";
-		int bucle1 =y;
-		int bucle2 =y;
-		
-		for (int i=0; i<bucle1; i++) {
-			for (int j=0; j<bucle2; j++) {
+		int bucle1=y*2;//Usamos este valor para imprimir el doble de espacios ya que en eclipse el espacio ocupa medio caracter aprox
+		int bucle2=1;//Con este valor imprimimos los caracteres en el bucle
+		String espacio= " ";
+		//Creamos el triangulo con 2 for anidados, uno para imprimir los espacios y otro los caracteres
+		for (int i =0; i<y;i++) {	
+			for (int j=0; j<bucle1; j++) {
 				System.out.print(espacio);
-				for (int k=0; k<y; k++) {
-					System.out.print(x);
 				}
+				for(int q=0; q<bucle2; q++) {
+					System.out.print(x);	
 			}
+			bucle2+=2;
+			bucle1-=2;
 			System.out.println();
-			bucle2-=1;
 		}
-		
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner teclado = new Scanner(System.in);
-		
+		//Declaramos las variables pedimos los valores y mostramos el resultado del método
 		char caracter;
 		int lineas;
 		
@@ -40,7 +40,7 @@ public class Ejercicio14 {
 		lineas=teclado.nextInt();
 		
 		triangulo(caracter, lineas);
-
+		teclado.close();
 	}
 
 }
