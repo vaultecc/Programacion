@@ -1,7 +1,7 @@
 /*
  * Aqui estamos probando variables, declarandolas y asignandole valores
  */
-package Ejemplos;
+package EjemplosCurso;
 
 public class UsoVariables {
 

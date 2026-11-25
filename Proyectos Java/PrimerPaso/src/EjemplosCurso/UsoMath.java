@@ -1,4 +1,4 @@
-package Ejemplos;
+package EjemplosCurso;
 
 public class UsoMath {
 
