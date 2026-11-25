@@ -2,13 +2,7 @@ package calificaciones;
 
 public class CalificacionesFast {
 	
-	static final int ALUMNOS = 8;
-	static final int MATERIAS = 4;
-	static final String [] NOMBRE_ALUMNOS = {"José", "Miguel", "Juan", "Pedro", "María", "Irene", "Carmen", "Gracia"};
-	static final String [] NOMBRE_MATERIAS =  {"lengua","inglés", "física", "música"};
-	
-	
-	public static int [][] calificaciones () {
+	public static int [][] calificaciones (int ALUMNOS, int MATERIAS) {
 		
 		int [][] calificaciones = new int [ALUMNOS][MATERIAS];
 		
@@ -20,7 +14,7 @@ public class CalificacionesFast {
 		return calificaciones;
 	}
 	
-	public static double [] mediaAlumno (int [][] x) {
+	public static double [] mediaAlumno (int [][] x, int ALUMNOS, int MATERIAS) {
 		int suma=0;
 		double media;
 		double [] mediaAlumno = new double [ALUMNOS];
@@ -36,7 +30,7 @@ public class CalificacionesFast {
 		return mediaAlumno;
 	}
 	
-	public static double [] mediaMateria (int [][] x) {
+	public static double [] mediaMateria (int [][] x, int ALUMNOS, int MATERIAS) {
 		int suma=0;
 		double media;
 		double [] mediaMateria = new double [MATERIAS];
@@ -52,30 +46,35 @@ public class CalificacionesFast {
 		return mediaMateria;
 	}
 	
-	public static String alumnoMediaBaja (int [][] x) {
+	public static String alumnoMediaBaja (int [][] x, String [] NOMBRE_ALUMNOS, int ALUMNOS, int MATERIAS) {
 		
-		double mediaBaja = mediaAlumno(x)[0];
+		double mediaBaja = mediaAlumno(x,ALUMNOS,MATERIAS)[0];
 		String mensaje= "El alumno con la calificación más baja es " + NOMBRE_ALUMNOS[0];
+		double [] mediaPorAlumno =  mediaAlumno(x,ALUMNOS,MATERIAS);
 		
 		for (int i=0; i<ALUMNOS; i++) {
-			if (mediaBaja > mediaAlumno(x)[i]) {
-				mediaBaja = mediaAlumno(x)[i];
+			if (mediaBaja > mediaPorAlumno[i]) {
+				mediaBaja = mediaPorAlumno[i];
 				mensaje = "El alumno con la calificación más baja es " + NOMBRE_ALUMNOS[i];
 			}
 		}
 		return mensaje;
 	}
 	
-	public static String materiaMenor4 (int [][] x) {
+	public static String materiaMenor4 (int [][] x, int MATERIAS,int ALUMNOS, String [] NOMBRE_MATERIAS) {
 		
 		String mensaje = "No hay materias con una calificación media inferior a 4";
+		double [] mediaPorMateria = mediaMateria(x, ALUMNOS, MATERIAS);
+		int contador = 0;
+		boolean materiaInferior4 = false;
 		
-		for (int i=0; i<MATERIAS; i++) {
-			if (mediaMateria(x)[i] <4  ) {
-				mensaje = "La materia " + NOMBRE_MATERIAS[i] + " tiene una calificación media inferior a 4";
-				break;
-			}
-		}
+		do {
+			if (mediaPorMateria[contador]<4  ) {
+				mensaje = "La materia " + NOMBRE_MATERIAS[contador] + " tiene una calificación media inferior a 4";
+				materiaInferior4 = true;
+		} contador++;
+		} while (contador != 4 && materiaInferior4 != true);
+		
 		return mensaje;
 	}
 	
@@ -83,27 +82,32 @@ public class CalificacionesFast {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		 final int ALUMNOS = 8;
+		 final int MATERIAS = 4;
+		 final String [] NOMBRE_ALUMNOS = {"José", "Miguel", "Juan", "Pedro", "María", "Irene", "Carmen", "Gracia"};
+		 final String [] NOMBRE_MATERIAS =  {"lengua","inglés", "física", "música"};
+		
 		int [][] notas = new int [ALUMNOS][MATERIAS];
 		
-		notas=calificaciones();
+		notas=calificaciones(ALUMNOS,MATERIAS);
 		
 		for (int i =0; i<ALUMNOS; i++) {
-			System.out.println("La media del alumno " + NOMBRE_ALUMNOS[i] + " es " + mediaAlumno(notas)[i]);
+			System.out.println("La media del alumno " + NOMBRE_ALUMNOS[i] + " es " + mediaAlumno(notas,ALUMNOS,MATERIAS)[i]);
 		}
 		
 		System.out.println();
 		
 		for (int i =0; i<MATERIAS; i++) {
-			System.out.println("La media de la materia " + NOMBRE_MATERIAS[i] + " es " + mediaMateria(notas)[i]);
+			System.out.println("La media de la materia " + NOMBRE_MATERIAS[i] + " es " + mediaMateria(notas,ALUMNOS,MATERIAS)[i]);
 		}
 		
 		System.out.println();
 		
-		System.out.println(alumnoMediaBaja(notas));
+		System.out.println(alumnoMediaBaja(notas,NOMBRE_ALUMNOS,ALUMNOS,MATERIAS));
 		
 		System.out.println();
 		
-		System.out.println(materiaMenor4(notas));
+		System.out.println(materiaMenor4(notas, MATERIAS,ALUMNOS, NOMBRE_MATERIAS));
 	}
 
 }
