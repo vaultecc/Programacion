@@ -15,7 +15,7 @@ public class Ejercicio5 {
 		boolean palindromo= false;
 		
 		String frase;
-		String invertida= "";;
+		String invertida= "";
 		
 		System.out.println("Introduce una frase");
 		frase=teclado.nextLine();
